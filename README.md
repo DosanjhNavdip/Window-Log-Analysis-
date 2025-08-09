@@ -1,28 +1,41 @@
-# Window-Log-Analysis-
+ 🖥 Windows Log Analysis with Splunk
 
-This project focuses on analyzing sample Windows 2000 system event logs to extract key system activity patterns, detect anomalies, and understand event trends.
+## Overview
+This project demonstrates the ingestion, analysis, and visualization of Windows event logs using **Splunk**.  
+The logs were generated via a custom PowerShell script to simulate real system activity and security events, then parsed in Splunk to identify trends, anomalies, and potential threats.  
+
+---
 
 ## Data Source
+- **Generated Log File:** `Windows_2k.log` (based on Windows Event Log structure)  
+- **Format:** Plain text with typical Windows event entries (Event ID, timestamps, system/user actions)  
+- **Generation Method:** PowerShell script that simulates logon/logoff events, process starts, file changes, and failed login attempts.  
 
-The log file used is:
-
-- **File**: `Windows_2k.log`
-- **Format**: Plain text with typical Windows event entries (e.g., Event ID, timestamps, system/user actions)
+---
 
 ## Objectives
-- Parse and structure raw Windows event log entries
-- Identify common system activities:
-  - Logon/logoff events
-  - Application and system errors
-  - Administrative changes
-- Detect anomalies:
-  - Multiple failed login attempts
-  - Unauthorized access
-  - Unexpected service or process activity
- 
- - ## 🛠 Tools & Technologies
+1. **Parse and structure raw Windows event log entries**
+2. **Identify common system activities**
+   - Logon/logoff events
+   - Application and system errors
+   - Administrative changes
+3. **Detect anomalies**
+   - Multiple failed login attempts
+   - Unauthorized access
+   - Unexpected service or process activity
 
-- **Python** – Data parsing and analysis
-- **Pandas / Polars** – Structured data handling
-- **Regex** – Extract event details from unstructured logs
-- **Splunk** – For visual dashboards and advanced queries
+---
+
+## Tools & Technologies
+- **Splunk** – Ingestion, SPL queries, dashboards, and alerts  
+- **PowerShell** – Log generation script (`generate_logs.ps1`)  
+- **Python** – Optional data parsing and pre-processing  
+- **Pandas** – Structured data handling (optional)  
+- **Regex** – Extracting event details from unstructured logs  
+
+---
+
+## Workflow
+1. **Generate Logs**  
+   - Run the PowerShell script in `/scripts` to produce Windows-style logs.
+   - Output stored in `/logs` as `.log` or `.csv`.
